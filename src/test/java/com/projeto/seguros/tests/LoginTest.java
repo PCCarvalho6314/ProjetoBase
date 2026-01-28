@@ -9,7 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
-import static com.projeto.seguros.driver.WebDriverManager.obterDriver;
+import static com.projeto.seguros.driver.BrowserDriverManager.obterDriver;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testes de Login")

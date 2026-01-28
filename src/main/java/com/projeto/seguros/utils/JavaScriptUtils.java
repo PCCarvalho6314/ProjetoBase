@@ -3,7 +3,7 @@ package com.projeto.seguros.utils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 
 /**
  * Utilitários para executar scripts JavaScript
@@ -23,7 +23,7 @@ public class JavaScriptUtils {
      * Executa um script JavaScript com argumentos
      */
     public static Object executar(String script, Object... args) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return js.executeScript(script, args);
     }
@@ -32,7 +32,7 @@ public class JavaScriptUtils {
      * Scroll até um elemento
      */
     public static void scrollParaElemento(WebElement elemento) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", elemento);
     }

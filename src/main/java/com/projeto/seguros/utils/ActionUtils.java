@@ -3,7 +3,7 @@ package com.projeto.seguros.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 
 /**
  * Utilitários para interações com mouse e teclado

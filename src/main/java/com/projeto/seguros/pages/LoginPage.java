@@ -1,6 +1,6 @@
 package com.projeto.seguros.pages;
 
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 import com.projeto.seguros.selectors.LoginPageSelectors;
 import com.projeto.seguros.utils.WaitUtils;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ public class LoginPage {
     private WebDriver driver;
 
     public LoginPage() {
-        this.driver = WebDriverManager.obterDriver();
+        this.driver = BrowserDriverManager.obterDriver();
     }
 
     /**

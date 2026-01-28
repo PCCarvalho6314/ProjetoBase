@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 
 import java.time.Duration;
 

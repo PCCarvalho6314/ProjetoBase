@@ -1,6 +1,6 @@
 package com.projeto.seguros.base;
 
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 import com.projeto.seguros.utils.ConfigReader;
 import com.projeto.seguros.utils.Screenshoter;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ public abstract class BaseTest {
     @BeforeEach
     public void setUp() {
         String navegador = ConfigReader.obterNavegador();
-        WebDriverManager.inicializarDriver(navegador);
+        BrowserDriverManager.inicializarDriver(navegador);
     }
 
     /**
@@ -24,7 +24,7 @@ public abstract class BaseTest {
      */
     @AfterEach
     public void tearDown() {
-        WebDriverManager.fecharDriver();
+        BrowserDriverManager.fecharDriver();
     }
 
     /**

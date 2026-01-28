@@ -1,6 +1,6 @@
 package com.projeto.seguros.pages;
 
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 import com.projeto.seguros.utils.WaitUtils;
 import com.projeto.seguros.utils.ActionUtils;
 import org.openqa.selenium.By;
@@ -24,7 +24,7 @@ public class HomePage {
     private static final By CONTADOR_NOTIFICACOES = By.className("notificationCount");
 
     public HomePage() {
-        this.driver = WebDriverManager.obterDriver();
+        this.driver = BrowserDriverManager.obterDriver();
     }
 
     /**

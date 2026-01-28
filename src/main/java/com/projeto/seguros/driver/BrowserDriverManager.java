@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class WebDriverManager {
+public class BrowserDriverManager {
 
     private static final ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
 

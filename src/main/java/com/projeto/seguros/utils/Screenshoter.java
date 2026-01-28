@@ -3,7 +3,7 @@ package com.projeto.seguros.utils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import com.projeto.seguros.driver.WebDriverManager;
+import com.projeto.seguros.driver.BrowserDriverManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class Screenshoter {
             return null;
         }
 
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         String nomeArquivo = nomeTeste + "_" + LocalDateTime.now().format(formatter) + ".png";
@@ -64,7 +64,7 @@ public class Screenshoter {
             return null;
         }
 
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         String nomeArquivo = nomeTeste + "_" + descricao + "_" + LocalDateTime.now().format(formatter) + ".png";
