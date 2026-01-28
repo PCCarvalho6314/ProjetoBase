@@ -1,0 +1,31 @@
+# Diretórios do Maven
+target/
+.m2/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Screenshots e relatórios
+target/screenshots/
+target/allure-results/
+target/site/
+
+# Configurações locais
+local.properties
+
+# Node (se usar npm também)
+node_modules/
+npm-debug.log
