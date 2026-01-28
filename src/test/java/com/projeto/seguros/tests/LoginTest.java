@@ -7,6 +7,7 @@ import com.projeto.seguros.utils.ConfigReader;
 import com.projeto.seguros.utils.Screenshoter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 import org.openqa.selenium.WebDriver;
 
 import static com.projeto.seguros.driver.BrowserDriverManager.obterDriver;
@@ -17,6 +18,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Deve fazer login com credenciais válidas")
+    @Disabled("Requer servidor web rodando")
     public void testarLoginComCredenciaisValidas() {
         // Arrange
         WebDriver driver = obterDriver();
@@ -38,6 +40,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Deve exibir erro com credenciais inválidas")
+    @Disabled("Requer servidor web rodando")
     public void testarLoginComCredenciaisInvalidas() {
         // Arrange
         WebDriver driver = obterDriver();
@@ -54,6 +57,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Deve abrir página de recuperação de senha")
+    @Disabled("Requer servidor web rodando")
     public void testarLinkEsqueciSenha() {
         // Arrange
         WebDriver driver = obterDriver();
