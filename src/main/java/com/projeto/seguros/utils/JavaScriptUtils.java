@@ -14,7 +14,7 @@ public class JavaScriptUtils {
      * Executa um script JavaScript
      */
     public static Object executar(String script) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return js.executeScript(script);
     }
@@ -77,7 +77,7 @@ public class JavaScriptUtils {
      * Aguarda jQuery estar carregado
      */
     public static void aguardarJQuery() {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("return jQuery != undefined", "");
     }

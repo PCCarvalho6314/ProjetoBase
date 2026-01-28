@@ -17,7 +17,7 @@ public class WaitUtils {
      * Aguarda até que um elemento esteja presente no DOM
      */
     public static WebElement esperarElementoPresente(By localizador) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.presenceOfElementLocated(localizador));
     }
@@ -26,7 +26,7 @@ public class WaitUtils {
      * Aguarda até que um elemento esteja visível
      */
     public static WebElement esperarElementoVisivel(By localizador) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(localizador));
     }
@@ -35,7 +35,7 @@ public class WaitUtils {
      * Aguarda até que um elemento seja clicável
      */
     public static WebElement esperarElementoClicavel(By localizador) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.elementToBeClickable(localizador));
     }
@@ -44,7 +44,7 @@ public class WaitUtils {
      * Aguarda até que um elemento tenha o texto específico
      */
     public static boolean esperarTextoNoElemento(By localizador, String texto) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.textToBePresentInElementLocated(localizador, texto));
     }
@@ -53,7 +53,7 @@ public class WaitUtils {
      * Aguarda até que o título da página contenha o texto
      */
     public static boolean esperarTituloPagina(String titulo) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.titleContains(titulo));
     }
@@ -62,7 +62,7 @@ public class WaitUtils {
      * Aguarda até que a URL da página seja igual à especificada
      */
     public static boolean esperarUrlPagina(String url) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.urlMatches(url));
     }
@@ -71,7 +71,7 @@ public class WaitUtils {
      * Aguarda com tempo customizado
      */
     public static WebElement esperarComTimeout(By localizador, long segundos) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(segundos));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(localizador));
     }

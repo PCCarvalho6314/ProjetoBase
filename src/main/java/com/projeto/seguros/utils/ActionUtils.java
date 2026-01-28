@@ -14,7 +14,7 @@ public class ActionUtils {
      * Hover (passa o mouse) sobre um elemento
      */
     public static void hover(WebElement elemento) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).moveToElement(elemento).perform();
     }
 
@@ -22,7 +22,7 @@ public class ActionUtils {
      * Duplo clique em um elemento
      */
     public static void duploClique(WebElement elemento) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).doubleClick(elemento).perform();
     }
 
@@ -30,7 +30,7 @@ public class ActionUtils {
      * Clique com botão direito (Context Menu)
      */
     public static void cliqueBotaoDireito(WebElement elemento) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).contextClick(elemento).perform();
     }
 
@@ -38,7 +38,7 @@ public class ActionUtils {
      * Drag and Drop
      */
     public static void dragDrop(WebElement origem, WebElement destino) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).dragAndDrop(origem, destino).perform();
     }
 
@@ -46,7 +46,7 @@ public class ActionUtils {
      * Drag and Drop para posição (x, y)
      */
     public static void dragDropPorOffset(WebElement elemento, int x, int y) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).dragAndDropBy(elemento, x, y).perform();
     }
 
@@ -54,7 +54,7 @@ public class ActionUtils {
      * Pressiona uma tecla
      */
     public static void pressionarTecla(String tecla) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).sendKeys(tecla).perform();
     }
 
@@ -62,7 +62,7 @@ public class ActionUtils {
      * Combinação de teclas (ex: Ctrl+A)
      */
     public static void combinacaoTeclas(String tecla1, String tecla2) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         Actions actions = new Actions(driver);
         actions.keyDown(tecla1).sendKeys(tecla2).keyUp(tecla1).perform();
     }
@@ -71,7 +71,7 @@ public class ActionUtils {
      * Clique e espera
      */
     public static void cliquePausa(WebElement elemento, long ms) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).click(elemento).pause(ms).perform();
     }
 
@@ -79,7 +79,7 @@ public class ActionUtils {
      * Move para elemento e clica
      */
     public static void moveEClica(WebElement elemento) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         new Actions(driver).moveToElement(elemento).click().perform();
     }
 
@@ -87,7 +87,7 @@ public class ActionUtils {
      * Seleciona múltiplos elementos com Ctrl+Click
      */
     public static void selecionarMultiplos(WebElement... elementos) {
-        WebDriver driver = WebDriverManager.obterDriver();
+        WebDriver driver = BrowserDriverManager.obterDriver();
         Actions actions = new Actions(driver);
         
         for (WebElement elemento : elementos) {
