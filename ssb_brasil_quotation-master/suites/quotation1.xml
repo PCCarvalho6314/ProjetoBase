@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="brasil quotation">
+    <parameter name="stage" value="int"/>
+    <parameter name="threadCount" value="5"/>
+    <parameter name="browser" value="edge"/>
+    <parameter name="report" value="allure"/>
+    <test name="quotation">
+        <classes>
+
+            <!--       Empresarial-->
+            <class name="testcases.ui.Empresarial.Epac.Emissao.issuanceEnterprisePme2024IssuanceFlowAZBEpac"/>
+            <class name="testcases.ui.Empresarial.Intranet.Emissao.IssuanceEnterprisePme2024IssuanceFlowAZBIntrTest"/>
+
+<!--            &lt;!&ndash;       Vida&ndash;&gt;-->
+            <class name="testcases.ui.Vida.Epac.Emissao.IssuanceTradicionalGlobalLifeIssuanceFlowAZBEpacTest"/>
+            <class name="testcases.ui.Vida.Epac.Critica_Calculo.IssuanceTradicionalGlobalLifeErrorsFlowAZBEpacTest"/>
+
+<!--            &lt;!&ndash;        Residência&ndash;&gt;-->
+            <class name="testcases.ui.Residencia.Epac.Emissao.issuanceIndividualResidence2013IssuanceFlowAZBEpac"/>
+            <class name="testcases.ui.Residencia.Intranet.Critica_Calculo.QuotationIndividualResidence2013QuoteFlowAZBIntrTest"/>
+            <class name="testcases.ui.Residencia.Intranet.Emissao.IssuanceIndividualResidence2013IssuanceFlowAZBIntrTest"/>
+
+            <class name="testcases.ui.Auto.releaseTarifa1211.IssuanceIndividualAuto1211ReleaseTarifasIssuanceFlowAZBEpacTest"/>
+            <class name="testcases.ui.Auto.mensagemRestritiva.QuotationIndividualAuto1211QuoteErrorsFlowAZBEpacTest"/>
+            <class name="testcases.ui.Auto.mensagemRestritiva.QuotationIndividualMoto1212QuoteErrorsFlowAZBEpacTest"/>
+<!--            <class name="testcases.ui.Auto.mensagemRestritiva.QuotationIndividualAuto1211QuoteErrorsFlowAZBEpacTest"/>-->
+<!--            <class name="testcases.ui.Auto.mensagemRestritiva.QuotationIndividualMoto1212QuoteErrorsFlowAZBEpacTest"/>-->
+<!--            <class name="testcases.ui.mensagemRestritiva.QuotationIndividualTruck1213QuoteErrorsFlowAZBEpacTest"/>-->
+        </classes>
+    </test>
+</suite>

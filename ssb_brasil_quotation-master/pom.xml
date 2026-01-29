@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.allianz</groupId>
+    <artifactId>ssb_brasil</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>Cotações em Massa - Auto / Moto / Caminhão</name>
+
+    <properties>
+        <!-- dependencies -->
+        <frw>6.5.5-SNAPSHOT</frw>
+        <dpd.aspectj.version>1.9.22</dpd.aspectj.version>
+
+        <!-- jdk + maven -->
+        <maven-jacoco.version>0.8.10</maven-jacoco.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+        <maven-compiler-plugin.verion>3.8.1</maven-compiler-plugin.verion>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- sonar -->
+        <sonar.projectKey>ssb_brasil_quotation</sonar.projectKey>
+        <sonar.projectName>ssb_brasil_quotation</sonar.projectName>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+        <sonar.sources>src/main</sonar.sources>
+        <runSuite>**/*Test.class</runSuite>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
+        <sonar.profile>Librerias</sonar.profile>
+        <maven-source-plugin.version>3.1.0</maven-source-plugin.version>
+
+        <!-- encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
+        <dependency>
+            <groupId>com.allianz.qa</groupId>
+            <artifactId>epac-auto-core</artifactId>
+            <version>${frw}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${dpd.aspectj.version}</version>
+        </dependency>
+        <!--excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.allianz.qa</groupId>-->
+<!--            <artifactId>epac-kernel-core</artifactId>-->
+<!--            <version>5.3.8</version>-->
+<!--        </dependency>-->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.verion}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+
+                    <failIfNoTests>true</failIfNoTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+
+                    <systemPropertyVariables>
+                        <stage>Local</stage>
+                        <threadCount>5</threadCount>
+                    </systemPropertyVariables>
+
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${dpd.aspectj.version}/aspectjweaver-${dpd.aspectj.version}.jar"
+                    </argLine>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
