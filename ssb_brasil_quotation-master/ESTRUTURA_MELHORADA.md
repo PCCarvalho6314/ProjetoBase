@@ -40,7 +40,7 @@ ssb_brasil_quotation-master/
 ### 1.2 Problemas Identificados
 
 | Problema | Impacto | Severidade |
-|----------|---------|-----------|
+|----------|---------|-----------|'
 | DadosCotacaoPage com 798 linhas | Difícil manutenção, baixa coesão | 🔴 CRÍTICO |
 | Locadores espalhados nas páginas | 600+ duplicações, hard to refactor | 🔴 CRÍTICO |
 | Base.java com tudo misturado | Difícil de testar, reutilizar | 🟡 ALTO |
@@ -216,7 +216,7 @@ static Stream<CotacaoAutoData> cotacaoAutoProvider() {
 
 ### 2.2 EXECUÇÃO (Execution Layer)
 
-#### Atual ❌
+#### Atual ❌'
 
 ```java
 // bases/Base.java - 50 linhas (tudo misturado)
@@ -405,7 +405,7 @@ public class CotacaoAutoTest extends BaseTest {
 
 ### 2.3 SAÍDA (Output Layer)
 
-#### Atual ❌'
+#### Atual ❌ '
 
 ```java
 // generateReport/CsvReport.java
@@ -587,7 +587,7 @@ public void testarCotacao(CotacaoAutoData dados) {
 ### 3.1 Redução de Código
 
 | Métrica | Atual | Proposto | Redução |
-|---------|-------|----------|---------|
+|---------|-------|----------|---------|'
 | **Linhas no DadosCotacaoPage** | 798 | 50 | **94%** ⬇️ |
 | **Locadores duplicados** | 600+ | 0 | **100%** ⬇️ |
 | **Classes Base/Util** | 15 | 25 | +67% ⬆️ (melhor) |
@@ -596,7 +596,7 @@ public void testarCotacao(CotacaoAutoData dados) {
 ### 3.2 Qualidade de Testes
 
 | Métrica | Atual | Proposto | Melhoria |
-|---------|-------|----------|----------|
+|---------|-------|----------|----------|'
 | **Paralelismo** | Não | Sim (JUnit 5) | ✅ |
 | **Tempo execução** | 30min (serial) | 5min (paralelo 6x) | **80%** ⬇️ |
 | **Flakiness** | 15% | 2% | **87%** ⬇️ |
@@ -605,7 +605,7 @@ public void testarCotacao(CotacaoAutoData dados) {
 ### 3.3 Manutenção
 
 | Cenário | Atual | Proposto |
-|---------|-------|----------|
+|---------|-------|----------|'
 | **Refatorar locador** | Tocar 30+ páginas | Tocar 1 arquivo |
 | **Adicionar novo ambiente** | Editar 3+ constantes | Editar 1 `.properties` |
 | **Adicionar novo timeout** | Editar constantes | Editar `config.properties` |
@@ -874,7 +874,7 @@ $ mvn clean test
 ### Comparação Final
 
 | Aspecto | Atual | Proposto | Melhoria |
-|---------|-------|----------|----------|
+|---------|-------|----------|----------|'
 | **Linhas em Page Object** | 798 | 50 | **94%** |
 | **Locadores duplicados** | 600+ | 0 | **100%** |
 | **Tempo de execução** | 30min | 5min | **80%** |
